@@ -1,7 +1,17 @@
 from Knn import knn
-import Extract
+import Extract as extract
 
-if __name__ == '__main__':
-    path = 'C:/Users/owner/Desktop/dataset.txt'
-    trainX, trainY, testX, testY = read_data(path)
-    knn(trainX, trainY, testX, testY, numNeigh = 5)
+
+def splitTestTrain(X, Y):
+    trainSize = (int)(0.8 * X.shape[0])
+    trainX = X[: trainSize]
+    trainY = Y[: trainSize]
+    testX = X[trainSize:]
+    testY = Y[trainSize:]
+    return trainX, trainY, testX, testY
+
+
+if _name_ == '_main_':
+    X, Y = extract.extract_features()
+    trainX, trainY, testX, testY = splitTestTrain(X, Y)
+    knn(trainX, trainY, testX, testY, numNeigh = 2)
