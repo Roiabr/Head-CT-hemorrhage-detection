@@ -1,4 +1,4 @@
-from Knn import knn
+import Knn
 import Extract as extract
 
 
@@ -14,4 +14,5 @@ def splitTestTrain(X, Y):
 if _name_ == '_main_':
     X, Y = extract.extract_features()
     trainX, trainY, testX, testY = splitTestTrain(X, Y)
-    knn(trainX, trainY, testX, testY, numNeigh = 2)
+    Knn.knn(trainX, trainY, testX, testY, numNeigh = 2)
+    Knn.knn_emd(trainX, trainY, testX, testY)
