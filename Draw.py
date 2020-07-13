@@ -8,6 +8,9 @@ def draw(images, labels):
     for i in range(0, 9):
         plt.subplot(330 + 1 + i)
         plt.imshow(images[i], cmap=plt.get_cmap('gray'))
-        plt.title("\nLabel:{}".format(labels[i]))
+        if labels[i] == 1:
+            plt.title("\nLabel:{}".format("Hemorrhage"))
+        else:
+            plt.title("\nLabel:{}".format("No Hemorrhage"))
     # show the plot
     plt.show()
