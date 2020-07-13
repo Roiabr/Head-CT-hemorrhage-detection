@@ -1,6 +1,5 @@
-#Let's take a look at the images
+import random
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def draw(images, labels):
@@ -14,3 +13,16 @@ def draw(images, labels):
             plt.title("\nLabel:{}".format("No Hemorrhage"))
     # show the plot
     plt.show()
+
+
+def drawPredict(model, testX, testY, images):
+    rand = random.randint(0, 39)
+    plt.imshow(images[rand])
+    if testY[rand] == 1:
+        plt.title("\nLabel:{}".format("Hemorrhage"))
+    else:
+        plt.title("\nLabel:{}".format("No Hemorrhage"))
+    plt.show()
+    predict = "Hemorrhage" if model.predict([testX[rand]]) == 1 else "No Hemorrhage"
+    label = "Hemorrhage" if testY[rand] == 1 else "No Hemorrhage"
+    print("The model predict:", predict, "the correct label:", label)

@@ -1,10 +1,15 @@
 from sklearn.neighbors import KNeighborsClassifier
+import Draw
 
 
-# k-NN classifier for image classification
-def knn(trainX, trainY, testX, testY, numNeigh = 3):
+def knn(trainX, trainY, testX, testY, images, numNeigh=3):
     # n_jobs means number of parallel jobs to run. -1 meansusing all processors
-    model = KNeighborsClassifier(n_neighbors=numNeigh, n_jobs=-1,)
+    model = KNeighborsClassifier(n_neighbors=numNeigh, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY)
+
+    print("---------------------KNN--------------------------")
+
+    Draw.drawPredict(model, testX, testY, images)
+
     print("Knn: raw pixel accuracy: {:.2f}%".format(acc * 100))
