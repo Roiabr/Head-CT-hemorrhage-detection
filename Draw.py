@@ -15,9 +15,10 @@ def draw(images, labels):
     plt.show()
 
 
-def drawPredict(model, testX, testY, images):
+def drawPredict(model, testX, testY, images, index):
     rand = random.randint(0, 39)
-    plt.imshow(images[rand])
+    inde = int (index[rand])
+    plt.imshow(images[inde])
     if testY[rand] == 1:
         plt.title("\nLabel:{}".format("Hemorrhage"))
     else:

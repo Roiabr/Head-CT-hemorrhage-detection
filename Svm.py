@@ -3,14 +3,14 @@ from sklearn.svm import SVC
 import Draw
 
 
-def svm(X_train, y_train, X_test,y_test,images):
+def svm(X_train, y_train, X_test,y_test, images, index):
     svclassifier1 = SVC(kernel='linear')
     svclassifier1.fit(X_train, y_train)
     acc = svclassifier1.score(X_test, y_test)
 
     print("---------------------SVM-LINEAR--------------------------")
 
-    Draw.drawPredict(svclassifier1, X_test, y_test, images)
+    Draw.drawPredict(svclassifier1, X_test, y_test, images, index)
 
     print("svm-linear: raw pixel accuracy: {:.2f}%".format(acc * 100))
 
@@ -20,7 +20,7 @@ def svm(X_train, y_train, X_test,y_test,images):
 
     print("---------------------SVM-POLY--------------------------")
 
-    Draw.drawPredict(svclassifier2, X_test, y_test, images)
+    Draw.drawPredict(svclassifier2, X_test, y_test, images, index)
 
     print("svm-poly: raw pixel accuracy: {:.2f}%".format(acc * 100))
 
@@ -30,7 +30,7 @@ def svm(X_train, y_train, X_test,y_test,images):
 
     print("---------------------SVM-RBF--------------------------")
 
-    Draw.drawPredict(svclassifier3, X_test, y_test, images)
+    Draw.drawPredict(svclassifier3, X_test, y_test, images, index)
 
     print("svm-rbf: raw pixel accuracy: {:.2f}%".format(acc * 100))
 
@@ -40,6 +40,6 @@ def svm(X_train, y_train, X_test,y_test,images):
 
     print("---------------------SVM-SIGMOID--------------------------")
 
-    Draw.drawPredict(svclassifier4, X_test, y_test, images)
+    Draw.drawPredict(svclassifier4, X_test, y_test, images, index)
 
     print("svm-sigmoid: raw pixel accuracy: {:.2f}%".format(acc * 100))

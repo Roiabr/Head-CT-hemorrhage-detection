@@ -1,30 +1,39 @@
 # from Cnn import cnnModel
+import Adaboost
 import Random_Forest
 import Svm
 from DecisionTreeClassifier import decisionTreeClassifier
 from Knn import knn
 import Extract as extract
+import numpy as np
 
 
-def splitTestTrain(X, Y, images):
-    trainSize = int(0.8 * X.shape[0])
-    trainX = X[: trainSize]
-    trainIm = images[: trainSize]
-    trainY = Y[: trainSize]
-    testX = X[trainSize:]
-    testIm = images[trainSize:]
-    testY = Y[trainSize:]
-    return trainX, trainY, testX, testY, trainIm, testIm
+def splitTestTrain(X, Y):
+    trainSize = (int)(0.8 * X.shape[0])
+    Y = np.reshape(Y, (Y.shape[0], 1))
+    indexes = np.arange(200)
+    indexes = np.reshape(indexes, (200, 1))
+    # to concatenate the data features with the labels
+    # labels now is data[:, -1]
+    data = np.concatenate((X, Y, indexes), axis=1)
+    np.random.shuffle(data)
+    trainX = data[: trainSize, :-2]
+    trainY = data[: trainSize, -2]
+    testX = data[trainSize:, :-2]
+    testY = data[trainSize:, -2]
+    imagesTest = data[trainSize:, -1]
+    return trainX, trainY, testX, testY, imagesTest
 
 
 if __name__ == '__main__':
     X, Y, images = extract.extract_features()
 
-    trainX, trainY, testX, testY, trainIm, testIm = splitTestTrain(X, Y, images)
+    trainX, trainY, testX, testY, testIm = splitTestTrain(X, Y)
 
-    knn(trainX, trainY, testX, testY, testIm, numNeigh=2)
-    Svm.svm(trainX, trainY, testX, testY, testIm)
-    Random_Forest.random_forest(trainX, trainY, testX, testY, testIm)
-    decisionTreeClassifier(trainX, trainY, testX, testY, testIm)
+    knn(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
+    Svm.svm(trainX, trainY, testX, testY,images, testIm)
+    Random_Forest.random_forest(trainX, trainY, testX, testY,images, testIm)
+    decisionTreeClassifier(trainX, trainY, testX, testY, images, testIm)
+    Adaboost.adaBoost(trainX, trainY, testX, testY, images, testIm)
 
     # cnnModel(128, 128)
