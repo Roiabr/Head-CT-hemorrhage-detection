@@ -1,9 +1,9 @@
-# from Cnn import cnnModel
+from Cnn import cnnModel
 import Adaboost
 import Random_Forest
 import Svm
 from DecisionTreeClassifier import decisionTreeClassifier
-from Knn import knn
+from Knn import knn, knnEMD
 import Extract as extract
 import numpy as np
 
@@ -26,14 +26,14 @@ def splitTestTrain(X, Y):
 
 
 if __name__ == '__main__':
-    X, Y, images = extract.extract_features()
-
+    pathX = "head_ct/*.png"
+    pathY = 'labels.csv'
+    X, Y, images = extract.extract_features(pathX, pathY)
     trainX, trainY, testX, testY, testIm = splitTestTrain(X, Y)
-
+    knnEMD(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
     knn(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
     Svm.svm(trainX, trainY, testX, testY,images, testIm)
     Random_Forest.random_forest(trainX, trainY, testX, testY,images, testIm)
     decisionTreeClassifier(trainX, trainY, testX, testY, images, testIm)
     Adaboost.adaBoost(trainX, trainY, testX, testY, images, testIm)
-
-    # cnnModel(128, 128)
+    cnnModel(320, 320, pathX, pathY)
