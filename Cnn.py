@@ -16,7 +16,7 @@ warnings.filterwarnings('ignore')
 
 """
 Loading and resizing 2D images.
-Arguments:
+Parameters:
     pathX: path to the images folder
     pathY: path to the labels csv file
 """
@@ -34,7 +34,7 @@ def load_samples_as_images(pathX, pathY,img_width, img_height):
 
 """
 Train and us cnn model
-Arguments:
+Parameters:
     img_width: new size for the image width
     img_height: new size for the image height
     pathX: path to the images folder
