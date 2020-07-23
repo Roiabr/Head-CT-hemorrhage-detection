@@ -8,9 +8,8 @@ def knn(trainX, trainY, testX, testY, images, index, numNeigh=3):
     model = KNeighborsClassifier(n_neighbors=numNeigh, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY) * 100
-    # Draw.drawPredict(model, testX, testY, images, index)
+    Draw.drawPredict(model, testX, testY, images, index)
     return acc
-
 
 
 # Earth mover:
@@ -24,6 +23,5 @@ def knnEMD(trainX, trainY, testX, testY, images, index, numNeigh=3):
                                  metric=EMD, metric_params=None, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY) * 100
-    # Draw.drawPredict(model, testX, testY, images, index)
+    Draw.drawPredict(model, testX, testY, images, index)
     return acc
-
