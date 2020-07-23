@@ -1,8 +1,5 @@
-from pyemd.emd import emd_samples
 from sklearn.neighbors import KNeighborsClassifier
 from scipy.stats import wasserstein_distance
-import numpy as np
-from pyemd import emd
 import Draw
 
 
@@ -11,9 +8,7 @@ def knn(trainX, trainY, testX, testY, images, index, numNeigh=3):
     model = KNeighborsClassifier(n_neighbors=numNeigh, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY) * 100
-    print("---------------------KNN--------------------------")
     # Draw.drawPredict(model, testX, testY, images, index)
-    print("Knn: raw pixel accuracy: {:.2f}%".format(acc))
     return acc
 
 
@@ -29,8 +24,6 @@ def knnEMD(trainX, trainY, testX, testY, images, index, numNeigh=3):
                                  metric=EMD, metric_params=None, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY) * 100
-    print("---------------------KNN with Earth Mover--------------------------")
     # Draw.drawPredict(model, testX, testY, images, index)
-    print("KnnEMD: raw pixel accuracy: {:.2f}%".format(acc))
     return acc
 

@@ -8,7 +8,5 @@ def adaBoost(X_train, y_train, X_test, y_test, images,index):
     # Train the model on training data
     boost.fit(X_train, y_train)
     acc = boost.score(X_test, y_test) * 100
-    print("-----------------------AdaBoost--------------------------")
     #Draw.drawPredict(boost, X_test, y_test, images,index)
-    print("AdaBoost: raw pixel accuracy: {:.2f}%".format(acc))
     return acc
