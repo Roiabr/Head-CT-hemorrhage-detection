@@ -87,7 +87,7 @@ if __name__ == '__main__':
     print('knn: {:.2f}%'.format(results[1]))
     print('svm-linear: {:.2f}%'.format(results[2]))
     print('svm-poly: {:.2f}%'.format(results[3]))
-    print('scm-RBF: {:.2f}%'.format(results[4]))
+    print('svm-RBF: {:.2f}%'.format(results[4]))
     print('svm-sigmoid: {:.2f}%'.format(results[5]))
     print('random forest: {:.2f}%'.format(results[6]))
     print('decision tree: {:.2f}%'.format(results[7]))
