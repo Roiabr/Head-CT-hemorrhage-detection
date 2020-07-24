@@ -1,6 +1,6 @@
 from Cnn import cnnModel
-import Adaboost
-import Random_Forest
+from Adaboost import adaBoost
+from Random_Forest import random_forest
 from Svm import svmlinear, svmpoly, svmrbf, svmsigmoid
 from DecisionTreeClassifier import decisionTreeClassifier
 from Knn import knn, knnEMD
@@ -61,10 +61,10 @@ if __name__ == '__main__':
 
     # 4) Train the models
     print('Begins testing the models...')
-    print('Extract features method:', method_to_extract_features)
 
-    results = np.zeros((9,1))
-    nb_iteration = 1
+    #results = np.zeros((9,1))
+    results = np.zeros(9)
+    nb_iteration = 2
     for epoch in range(nb_iteration):
         print('epoch number:', epoch)
         results[0] += knnEMD(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
@@ -73,14 +73,15 @@ if __name__ == '__main__':
         results[3] += svmpoly(trainX, trainY, testX, testY,images, testIm)
         results[4] += svmrbf(trainX, trainY, testX, testY,images, testIm)
         results[5] += svmsigmoid(trainX, trainY, testX, testY,images, testIm)
-        results[6] += Random_Forest.random_forest(trainX, trainY, testX, testY,images, testIm)
+        results[6] += random_forest(trainX, trainY, testX, testY,images, testIm)
         results[7] += decisionTreeClassifier(trainX, trainY, testX, testY, images, testIm)
-        results[8] += Adaboost.adaBoost(trainX, trainY, testX, testY, images, testIm)
+        results[8] += adaBoost(trainX, trainY, testX, testY, images, testIm)
 
-    results = np.average(results, axis=1)
+    results = np.divide(results, nb_iteration)
     print()
     print()
-    print('==========================================================')
+    print('=============================')
+    print('Extract features method:', method_to_extract_features)
     print('The average results for standard machine learning models:')
     print('knn-EMD: {:.2f}%'.format(results[0]))
     print('knn: {:.2f}%'.format(results[1]))

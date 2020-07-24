@@ -35,8 +35,8 @@ Second image for extracting the features from the input image,
 by finding the histogram of each image.
 """
 def image_to_histogram_vector(image):
-    histogram, bin_edges = np.histogram(image, bins=np.arange(250))
-    histogram = np.reshape(histogram, (1, 249))
+    histogram, bin_edges = np.histogram(image, bins=np.arange(257))
+    histogram = np.reshape(histogram, (1, 256))
     return histogram
 
 
@@ -63,7 +63,7 @@ def extract_features(images, method=Method.SIMPLE):
             succinct_x = np.vstack([image_to_vector(image, size), succinct_x])
 
     elif method == Method.HISTOGRAM:
-        succinct_x = np.empty(shape=(0, 249))
+        succinct_x = np.empty(shape=(0, 256))
         for i, image in enumerate(images):
             succinct_x = np.vstack([image_to_histogram_vector(image), succinct_x])
 
