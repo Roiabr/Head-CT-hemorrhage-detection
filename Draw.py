@@ -16,8 +16,10 @@ def draw(images, labels):
 
 
 def drawPredict(model, testX, testY, images, index):
+    modelName = str(model)
+    modelName = modelName.split("(")[0]
     rand = random.randint(0, 39)
-    inde = int (index[rand])
+    inde = int(index[rand])
     plt.imshow(images[inde])
     if testY[rand] == 1:
         plt.title("\nLabel:{}".format("Hemorrhage"))
@@ -26,4 +28,9 @@ def drawPredict(model, testX, testY, images, index):
     plt.show()
     predict = "Hemorrhage" if model.predict([testX[rand]]) == 1 else "No Hemorrhage"
     label = "Hemorrhage" if testY[rand] == 1 else "No Hemorrhage"
-    print("The model predict:", predict, "the correct label:", label)
+    print("The model", modelName, " predict:", predict, "the correct label:", label)
+
+if __name__ == '__main__':
+    model = "KNeighborsClassifier(n_jobs=-1, n_neighbors=2)"
+    modelName = model.split("(")[0]
+    print(modelName)
