@@ -1,0 +1,115 @@
+Begins testing the models...
+epoch number: 1
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-LINEAR predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-SIGMOD predict: No Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model AdaBoostClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+epoch number: 2
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: Hemorrhage
+The model KNeighborsClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-RBF predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-SIGMOD predict: Hemorrhage the correct label: Hemorrhage
+The model RandomForestClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model DecisionTreeClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
+epoch number: 3
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-SIGMOD predict: Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
+epoch number: 4
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-SIGMOD predict: Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model AdaBoostClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+epoch number: 5
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: Hemorrhage
+The model SVC-SIGMOD predict: Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
+epoch number: 6
+The model KNeighborsClassifier-EMD  predict: Hemorrhage the correct label: Hemorrhage
+The model KNeighborsClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-SIGMOD predict: Hemorrhage the correct label: Hemorrhage
+The model RandomForestClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
+epoch number: 7
+The model KNeighborsClassifier-EMD  predict: Hemorrhage the correct label: Hemorrhage
+The model KNeighborsClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-POLY predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-SIGMOD predict: No Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
+epoch number: 8
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: No Hemorrhage the correct label: Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-SIGMOD predict: Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+epoch number: 9
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-LINEAR predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-POLY predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-SIGMOD predict: No Hemorrhage the correct label: Hemorrhage
+The model RandomForestClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model AdaBoostClassifier  predict: No Hemorrhage the correct label: No Hemorrhage
+epoch number: 10
+The model KNeighborsClassifier-EMD  predict: No Hemorrhage the correct label: No Hemorrhage
+The model KNeighborsClassifier  predict: Hemorrhage the correct label: No Hemorrhage
+The model SVM-LINEAR predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-POLY predict: No Hemorrhage the correct label: No Hemorrhage
+The model SVM-RBF predict: Hemorrhage the correct label: Hemorrhage
+The model SVM-SIGMOD predict: No Hemorrhage the correct label: No Hemorrhage
+The model RandomForestClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model DecisionTreeClassifier  predict: Hemorrhage the correct label: Hemorrhage
+The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
+
+
+=============================
+Extract features method: Method.SIMPLE
+The average results for standard machine learning models:
+knn-EMD: 70.00% 
+knn: 75.00%
+svm-linear: 67.50%
+svm-poly: 75.00%
+svm-RBF: 85.00%
+svm-sigmoid: 37.50%
+random forest: 84.50%
+decision tree: 68.75%
+adaBoost: 70.00%
