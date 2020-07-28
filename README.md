@@ -46,7 +46,7 @@ and we decided  to implement those classifiers:
   
 - **Classification**:
  
- We send the data to several classifiers and each classifier did the same thing: train the data(fit),get the score of the machine and the predict of the machine on one of the         picture in the dataset.
+    We send the data to several classifiers and each classifier did the same thing: train the data(fit),get the score of the machine and the predict of the machine on one of the         picture in the dataset.
  
  
 
