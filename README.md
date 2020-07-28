@@ -1,9 +1,8 @@
+
 ## Machine Learnig - Final Project
 
-# Head CT hemorrhage detection
-
 ![dataset-cover](https://user-images.githubusercontent.com/44756354/88648428-a697df00-d0cf-11ea-979e-7010b14c7fa9.jpg)
-
+# Head CT hemorrhage detection
 
 ### Introduction:
 In this project, we asked for machine learning final project to choose a dataset
@@ -20,3 +19,12 @@ and we decided  to implement those classifiers:
 * DECISION TREE
 * RANDOM FOREST
 * CNN
+
+
+
+
+## Contributor
+
+* [Roi Abramovitch](https://www.linkedin.com/in/roi-abramovitch-04b62821/)
+
+* [Chen Asraf](https://www.linkedin.com/in/chen-asaraf/)
