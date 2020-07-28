@@ -7,13 +7,14 @@ The methods converts 2D image to 1D vector:
     image_to_histogram_vector - convert to image histogram
 """
 import numpy as np
-import Draw
 import cv2
 from enum import Enum
 
 """
 enum class: Represent the method to extract features from the input images 
 """
+
+
 class Method(Enum):
     SIMPLE = 1
     HISTOGRAM = 2
@@ -23,17 +24,20 @@ class Method(Enum):
 First method for extracting the features from the input image,
 by reducing its dimensions and turning it into a vector.
 """
+
+
 def image_to_vector(image, size):
     # resize the image to a fixed size, then flatten the image into
     # a list of raw pixel intensities
     return cv2.resize(image, dsize=size, interpolation=cv2.INTER_CUBIC).flatten()
 
 
-
 """
 Second image for extracting the features from the input image,
 by finding the histogram of each image.
 """
+
+
 def image_to_histogram_vector(image):
     histogram, bin_edges = np.histogram(image, bins=np.arange(257))
     histogram = np.reshape(histogram, (1, 256))
@@ -50,6 +54,8 @@ Parameters:
 Returns:
     succinct_x: images in succinct format
 """
+
+
 def extract_features(images, method=Method.SIMPLE):
     # Draw.draw(images, labels)
 

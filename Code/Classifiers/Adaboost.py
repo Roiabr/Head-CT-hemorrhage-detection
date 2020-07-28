@@ -1,6 +1,6 @@
 from sklearn.ensemble import AdaBoostClassifier
 
-import Draw
+import Code.Draw
 
 
 def adaBoost(X_train, y_train, X_test, y_test, images, index):
@@ -8,5 +8,5 @@ def adaBoost(X_train, y_train, X_test, y_test, images, index):
     # Train the model on training data
     boost.fit(X_train, y_train)
     acc = boost.score(X_test, y_test) * 100
-    Draw.drawPredict(boost, X_test, y_test, images, index)
+    Code.Draw.drawPredict(boost, X_test, y_test, images, index)
     return acc

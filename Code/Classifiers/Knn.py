@@ -1,6 +1,6 @@
 from sklearn.neighbors import KNeighborsClassifier
 from scipy.stats import wasserstein_distance
-import Draw
+import Code.Draw
 
 
 def knn(trainX, trainY, testX, testY, images, index, numNeigh=3):
@@ -8,7 +8,7 @@ def knn(trainX, trainY, testX, testY, images, index, numNeigh=3):
     model = KNeighborsClassifier(n_neighbors=numNeigh, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY) * 100
-    Draw.drawPredict(model, testX, testY, images, index)
+    Code.Draw.drawPredict(model, testX, testY, images, index)
     return acc
 
 
@@ -23,5 +23,5 @@ def knnEMD(trainX, trainY, testX, testY, images, index, numNeigh=3):
                                  metric=EMD, metric_params=None, n_jobs=-1)
     model.fit(trainX, trainY)
     acc = model.score(testX, testY) * 100
-    Draw.drawPredict(model, testX, testY, images, index)
+    Code.Draw.drawPredict(model, testX, testY, images, index)
     return acc
