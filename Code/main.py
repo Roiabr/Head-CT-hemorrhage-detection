@@ -1,10 +1,10 @@
 from Cnn import cnnModel
-from Adaboost import adaBoost
-from Random_Forest import random_forest
-from Svm import svmlinear, svmpoly, svmrbf, svmsigmoid
-from DecisionTreeClassifier import decisionTreeClassifier
-from Knn import knn, knnEMD
-import Extract as ex
+from Code.Classifiers.Adaboost import adaBoost
+from Code.Classifiers.Random_Forest import random_forest
+from Code.Classifiers.Svm import svmlinear, svmpoly, svmrbf, svmsigmoid
+from Code.Classifiers.DecisionTreeClassifier import decisionTreeClassifier
+from Code.Classifiers.Knn import knn, knnEMD
+import Code.Extract as ex
 import numpy as np
 import glob
 import cv2
@@ -44,8 +44,8 @@ Main experiment:
 if __name__ == '__main__':
 
     # 1) Load images and labels
-    pathX = "head_ct/*.png"
-    pathY = 'labels.csv'
+    pathX = "../Dataset/head_ct/*.png"
+    pathY = '../Dataset/labels.csv'
 
     files = sorted(glob.glob(pathX))
     labels_df = pd.read_csv(pathY)
@@ -93,4 +93,4 @@ if __name__ == '__main__':
     print('decision tree: {:.2f}%'.format(results[7]))
     print('adaBoost: {:.2f}%'.format(results[8]))
 
-    #cnnModel(320, 320, pathX, pathY)
+    cnnModel(320, 320, pathX, pathY)
