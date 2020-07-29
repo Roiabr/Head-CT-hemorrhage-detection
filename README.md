@@ -21,7 +21,7 @@ and to implement a machine learning classifiers.
 * Keras (pip install keras)
 ### About the project:
 We choose to work on the [Head CT-hemorrhage](https://www.kaggle.com/felipekitamura/head-ct-hemorrhage/?select=head_ct) dataset
-and we decided  to implement those classifiers:
+and we decided  to implement those classifiers on the data:
 * KNN - with the euclidean distance                      
 * KNN - with earth mover distance            
 * SVM - with linear, polynomial, RBF, sigmoid kernel.  
@@ -39,15 +39,17 @@ and we decided  to implement those classifiers:
 
   First we extract the features by two approch:
 
-  1) Use OpenCV to resize the picture to a smaller size and then push the picture to a one dimensions array with the pixels of the picture.
+  1) Simple - Use OpenCV to resize the picture to a smaller size and then push the picture to a one dimensions array with the pixels of the picture.
   
-  2) Color Histogram - Color Histogram is a representation of the distribution of colors in an image. For digital images, a color histogram represents the number of pixels that                         have colors in each of a fixed list of color ranges, that span the image's color space, the set of all possible colors.
+  2) Histogram - Color Histogram is a representation of the distribution of colors in an image. For digital images, a color histogram represents the number of pixels that                         have colors in each of a fixed list of color ranges, that span the image's color space, the set of all possible colors.
   After that we shuffle and split the data to trainX, trainY, testX, testY and send it to the classifiers
   
 - **Classification**:
  
-    We send the data to several classifiers and each classifier did the same thing: train the data(fit),get the score of the machine and the predict of the machine on one of the         picture in the dataset.
- 
+    We send the data to the classifiers and each classifier did the same thing: train the data(fit),get the score of the machine and the predict of the machine on one of the         picture in the dataset.
+    
+    For the cnn we use the Simple approch to extract the features and we resize the picture in size of 320X320, and then we shuffle and split the data.                               After that we built a model with 5 convolution layer and then we train the model.
+    
  
 
 ## Conclusion
