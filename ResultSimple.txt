@@ -104,12 +104,12 @@ The model AdaBoostClassifier  predict: Hemorrhage the correct label: Hemorrhage
 =============================
 Extract features method: Method.SIMPLE
 The average results for standard machine learning models:
-knn-EMD: 70.00% 
-knn: 75.00%
-svm-linear: 67.50%
-svm-poly: 75.00%
-svm-RBF: 85.00%
-svm-sigmoid: 37.50%
-random forest: 84.50%
-decision tree: 68.75%
-adaBoost: 70.00%
+knn-EMD: 70.00%
+knn: 90.00%
+svm-linear: 80.00%
+svm-poly: 80.00%
+scm-RBF: 82.50%
+svm-sigmoid: 25.00%
+random forest: 85.00%
+decision tree: 72.50%
+adaBoost: 77.50%
