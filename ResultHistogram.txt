@@ -105,11 +105,12 @@ The model AdaBoostClassifier  predict: No Hemorrhage the correct label: No Hemor
 Extract features method: Method.HISTOGRAM
 The average results for standard machine learning models:
 knn-EMD: 77.50%
-knn: 85.00%
-svm-linear: 70.00%
-svm-poly: 57.50%
+knn: 72.50%
+svm-linear: 67.50%
+svm-poly: 65.00%
 svm-RBF: 80.00%
-svm-sigmoid: 35.00%
-random forest: 72.50%
-decision tree: 64.25%
-adaBoost: 67.50%
+svm-sigmoid: 30.00%
+random forest: 77.50%
+decision tree: 75.00%
+adaBoost: 77.50%
+
