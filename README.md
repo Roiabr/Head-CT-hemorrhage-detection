@@ -58,7 +58,8 @@ and we decided  to implement those classifiers on the data:
 
 ## Conclusion
 
-   As we can see, the Simple approach got better result then Histogram, as we got 90% Accuracy in knn and 85% Accuracy in random forest.
+   As we can see, the Simple approach got better result then Histogram, as we got 90% accuracy in knn and 85% accuracy in random forest.
+   
    But as we thought Convolutional neural network is the best approach to image classification, and indeed we got 100% accuracy when we used it to classify the images.
 
 
