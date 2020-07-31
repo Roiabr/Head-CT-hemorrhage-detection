@@ -20,9 +20,6 @@ We worked with [Head CT-hemorrhage](https://www.kaggle.com/felipekitamura/head-c
 * Tensorflow (pip install tensorflow)
 * Keras (pip install keras)
 ### About the project:
-We chose to extract the features from the images in 2 ways: 
-* Image histogram
-* Image resize + flatten
 We examined the results of the following classifiers:
 * KNN - with the euclidean distance                      
 * KNN - with earth mover distance            
