@@ -5,9 +5,8 @@
 # Head CT hemorrhage detection
 
 ### Introduction:
-In this project, we asked for machine learning final project to choose a dataset
-
-and to implement a machine learning classifiers.
+In this project, we used various machine learning algorithms to classify images.
+We worked with [Head CT-hemorrhage](https://www.kaggle.com/felipekitamura/head-ct-hemorrhage/?select=head_ct) dataset, that contains 100 normal head CT slices and 100 other with hemorrhage.
 
 ### Requirements
 * Python 3.6+
@@ -21,8 +20,10 @@ and to implement a machine learning classifiers.
 * Tensorflow (pip install tensorflow)
 * Keras (pip install keras)
 ### About the project:
-We choose to work on the [Head CT-hemorrhage](https://www.kaggle.com/felipekitamura/head-ct-hemorrhage/?select=head_ct) dataset
-and we decided  to implement those classifiers on the data:
+We chose to extract the features from the images in 2 ways: 
+* Image histogram
+* Image resize + flatten
+We examined the results of the following classifiers:
 * KNN - with the euclidean distance                      
 * KNN - with earth mover distance            
 * SVM - with linear, polynomial, RBF, sigmoid kernel.  
