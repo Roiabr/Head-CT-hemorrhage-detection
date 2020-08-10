@@ -65,4 +65,4 @@ We examined the results of the following classifiers:
 
 * [Roi Abramovitch](https://www.linkedin.com/in/roi-abramovitch-04b62821/)
 
-* [Chen Asraf](https://www.linkedin.com/in/chen-asaraf/)
+* [Chen Asaraf](https://www.linkedin.com/in/chen-asaraf/)
