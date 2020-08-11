@@ -104,7 +104,7 @@ def cnnModel(img_width, img_height, pathX, pathY):
     model.add(Activation('sigmoid'))
 
     # print the model summary:
-    model.summary()
+    #model.summary()
 
 
     # compile the network:
@@ -150,4 +150,4 @@ def cnnModel(img_width, img_height, pathX, pathY):
         validation_data=validation_generator,
         validation_steps=nb_validation_samples // batch_size)
 
-    print("Accuracy: " + str(model.evaluate(test_images[..., np.newaxis] / 255., test_labels)[1] * 100) + "%")
+    print("Final accuracy: " + str(model.evaluate(test_images[..., np.newaxis] / 255., test_labels)[1] * 100) + "%")
