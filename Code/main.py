@@ -52,45 +52,50 @@ if __name__ == '__main__':
     labels = np.array(labels_df[' hemorrhage'].tolist())
     images = np.array([cv2.imread(path, cv2.IMREAD_GRAYSCALE) for path in files])
 
-    # 2) Extract the features with one of two methods: 'SIMPLE' or 'HISTOGRAM', see 'Extract' doc.
-    method_to_extract_features = ex.Method.HISTOGRAM
-    X = ex.extract_features(images, method_to_extract_features)
+    # Run on variety of image size options:
+    for s in range(20, 150, 10):
+        # 2) Extract the features with one of four methods: 'SIMPLE', 'HISTOGRAM', 'HUMOMENTS' and 'PAC'.
+        # see 'Extract' doc.
+        method_to_extract_features = ex.Method.HUMOMENTS
+        X = ex.extract_features(images, method=method_to_extract_features, size=(s, s))
+        print('Extract features method:', method_to_extract_features, ", image size:", s)
 
-    # 3) Split data into train & test sets, including shuffle of the data
-    trainX, trainY, testX, testY, testIm = splitTestTrain(X, labels)
+        # 3) Split data into train & test sets, including shuffle of the data
+        trainX, trainY, testX, testY, testIm = splitTestTrain(X, labels)
 
-    # 4) Train the models
-    print('Begins testing the models...')
+        # 4) Train the models
+        print('Begins testing the models...')
 
-    #results = np.zeros((9,1))
-    results = np.zeros(9)
-    nb_iteration = 2
-    for epoch in range(nb_iteration):
-        print('epoch number:', epoch)
-        results[0] += knnEMD(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
-        results[1] += knn(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
-        results[2] += svmlinear(trainX, trainY, testX, testY,images, testIm)
-        results[3] += svmpoly(trainX, trainY, testX, testY,images, testIm)
-        results[4] += svmrbf(trainX, trainY, testX, testY,images, testIm)
-        results[5] += svmsigmoid(trainX, trainY, testX, testY,images, testIm)
-        results[6] += random_forest(trainX, trainY, testX, testY,images, testIm)
-        results[7] += decisionTreeClassifier(trainX, trainY, testX, testY, images, testIm)
-        results[8] += adaBoost(trainX, trainY, testX, testY, images, testIm)
+        results = np.zeros(9)
+        nb_iteration = 10
 
-    results = np.divide(results, nb_iteration)
-    print()
-    print()
-    print('=============================')
-    print('Extract features method:', method_to_extract_features)
-    print('The average results for standard machine learning models:')
-    print('knn-EMD: {:.2f}%'.format(results[0]))
-    print('knn: {:.2f}%'.format(results[1]))
-    print('svm-linear: {:.2f}%'.format(results[2]))
-    print('svm-poly: {:.2f}%'.format(results[3]))
-    print('svm-RBF: {:.2f}%'.format(results[4]))
-    print('svm-sigmoid: {:.2f}%'.format(results[5]))
-    print('random forest: {:.2f}%'.format(results[6]))
-    print('decision tree: {:.2f}%'.format(results[7]))
-    print('adaBoost: {:.2f}%'.format(results[8]))
+        for epoch in range(nb_iteration):
+            results[0] += knnEMD(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
+            results[1] += knn(trainX, trainY, testX, testY,images, testIm, numNeigh=2)
+            results[2] += svmlinear(trainX, trainY, testX, testY,images, testIm)
+            results[3] += svmpoly(trainX, trainY, testX, testY,images, testIm)
+            results[4] += svmrbf(trainX, trainY, testX, testY,images, testIm)
+            results[5] += svmsigmoid(trainX, trainY, testX, testY,images, testIm)
+            results[6] += random_forest(trainX, trainY, testX, testY,images, testIm)
+            results[7] += decisionTreeClassifier(trainX, trainY, testX, testY, images, testIm)
+            results[8] += adaBoost(trainX, trainY, testX, testY, images, testIm)
 
-    cnnModel(320, 320, pathX, pathY)
+        results = np.divide(results, nb_iteration)
+        print('=============================')
+        print('The average results for standard machine learning models:')
+        print('knn-EMD: {:.2f}%'.format(results[0]))
+        print('knn: {:.2f}%'.format(results[1]))
+        print('svm-linear: {:.2f}%'.format(results[2]))
+        print('svm-poly: {:.2f}%'.format(results[3]))
+        print('svm-RBF: {:.2f}%'.format(results[4]))
+        print('svm-sigmoid: {:.2f}%'.format(results[5]))
+        print('random forest: {:.2f}%'.format(results[6]))
+        print('decision tree: {:.2f}%'.format(results[7]))
+        print('adaBoost: {:.2f}%'.format(results[8]))
+        print('=============================')
+        print()
+        print()
+
+    cnnModel(s, s, pathX, pathY)
+
+    
